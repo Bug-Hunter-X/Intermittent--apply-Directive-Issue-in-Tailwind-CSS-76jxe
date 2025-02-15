@@ -1,0 +1,39 @@
+/* bugSolution.css */
+
+.my-class {
+  /* Instead of using @apply directly, define the styles explicitly */
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  /* Responsive modifiers should be placed correctly */
+  @screen sm {
+    padding: 2rem;
+  }
+  /* Pseudo-selectors should also be correctly positioned */
+  &:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+/* Alternative approach: Separate classes for better control */
+.base-style {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.sm-padding {
+  @screen sm {
+    padding: 2rem;
+  }
+}
+
+.hover-effect {
+  &:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+.my-class-alternative {
+  @apply base-style sm-padding hover-effect;
+}
